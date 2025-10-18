@@ -1,0 +1,215 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "mz_class_VXirGd": {
+      "type": "mz-class",
+      "name": "class1",
+      "settings": {
+        "heading_text": "mahfoo khanb",
+        "paragraph": "xcghhvchjgcxcxv jhgxcbg",
+        "number": 122,
+        "padding_top": 2,
+        "padding_bottom": 2,
+        "haddingfont_size": 15,
+        "heading_alignment": "center",
+        "show_heading": true,
+        "radio": "this is bad"
+      }
+    },
+    "collection_list_mz_Tthgb4": {
+      "type": "collection-list-mz",
+      "blocks": {
+        "collection_list_Q8gMdM": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/apple-fuji.webp",
+            "collection_link": ""
+          }
+        },
+        "collection_list_qD8GUM": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/Gemini_Generated_Image_p72gwqp72gwqp72g.png",
+            "collection_link": ""
+          }
+        },
+        "collection_list_acALah": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/images_4.jpg",
+            "collection_link": ""
+          }
+        },
+        "collection_list_aqdFz4": {
+          "type": "collection-list",
+          "settings": {
+            "collection_image": "shopify://shop_images/shop-online-from-india-fruits-anar-pomegranate-fresh-food-in-dubai-and-abu-dhabi-24621151886_1200x1200_1_800x_4c1cc05a-99df-478a-a13e-48139d6ece63.webp",
+            "collection_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_Q8gMdM",
+        "collection_list_qD8GUM",
+        "collection_list_acALah",
+        "collection_list_aqdFz4"
+      ],
+      "name": "Collection list mz",
+      "settings": {
+        "collection-list-heading": "<h4>explore our best sellers</h4>"
+      }
+    },
+    "testimonial_section_mz_NixwEa": {
+      "type": "testimonial-section-mz",
+      "blocks": {
+        "testimonial_mwrg78": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/grapes-green.webp",
+            "customer_name": "Koi kam ka nahi",
+            "customer_review": ""
+          }
+        },
+        "testimonial_8PMDbA": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/Gemini_Generated_Image_p72gwqp72gwqp72g.png",
+            "customer_name": "Koi kam ka nahi",
+            "customer_review": "Bahut achchha hai!"
+          }
+        },
+        "testimonial_VWG9qU": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/shop-online-from-india-fruits-anar-pomegranate-fresh-food-in-dubai-and-abu-dhabi-24621151886_1200x1200_1_800x_4c1cc05a-99df-478a-a13e-48139d6ece63.webp",
+            "customer_name": "Koi kam ka nahi",
+            "customer_review": "Bahut achchha hai!"
+          }
+        },
+        "testimonial_QMpEyX": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/1660539949720-sku-0308-1-500x500.webp",
+            "customer_name": "Koi kam ka nahi",
+            "customer_review": "Bahut achchha hai!"
+          }
+        },
+        "testimonial_GKdfhP": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/Untitled-design-2022-06-07T161911.070.webp",
+            "customer_name": "Koi kam ka nahi",
+            "customer_review": "Bahut achchha hai!"
+          }
+        },
+        "testimonial_6aYxkJ": {
+          "type": "testimonial",
+          "settings": {
+            "customer_image": "shopify://shop_images/Gemini_Generated_Image_503uet503uet503u.png",
+            "customer_name": "Koi kam ka nahi",
+            "customer_review": "Bahut achchha hai!"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_mwrg78",
+        "testimonial_8PMDbA",
+        "testimonial_VWG9qU",
+        "testimonial_QMpEyX",
+        "testimonial_GKdfhP",
+        "testimonial_6aYxkJ"
+      ],
+      "name": "testimonial YT live",
+      "settings": {}
+    },
+    "accordion_container_mz_JFbAdU": {
+      "type": "accordion-container-mz",
+      "blocks": {
+        "faq_item_rrYpNV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Ek section banao jiska naam ho promo-banner.liquid,jo ek heading aur ek background color input le.",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_rrYpNV"
+      ],
+      "name": "FAQ Accordion",
+      "settings": {
+        "faq_heading": "Frequently Asked Questions"
+      }
+    },
+    "learning_liquid_hdYttm": {
+      "type": "learning-liquid",
+      "name": "Learning Liquid",
+      "settings": {
+        "star_range": 5
+      }
+    }
+  },
+  "order": [
+    "main",
+    "mz_class_VXirGd",
+    "collection_list_mz_Tthgb4",
+    "testimonial_section_mz_NixwEa",
+    "accordion_container_mz_JFbAdU",
+    "learning_liquid_hdYttm"
+  ]
+}

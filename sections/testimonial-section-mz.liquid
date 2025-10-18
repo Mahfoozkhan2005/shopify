@@ -1,0 +1,140 @@
+<style>
+  .collection-testimonial-{{ section.id }} {
+    background: #fcfbfb;
+    padding: 50px;
+  }
+
+  .collection-testimonial-{{ section.id }} .container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .collection-testimonial-{{ section.id }} .card {
+    background: #ff5757;
+    width: 250px;
+    height: 21rem;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .collection-testimonial-{{ section.id }} .card::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -50px;
+    width: 350px;
+    height: 100px;
+    background: #fff;
+    transform: rotate(-5deg);
+    z-index: 0;
+  }
+
+  .collection-testimonial-{{ section.id }} .img-box {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0 auto 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .collection-testimonial-{{ section.id }} .img-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .collection-testimonial-{{ section.id }} h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    z-index: 1;
+  }
+
+  .collection-testimonial-{{ section.id }} p {
+    font-size: 13px;
+    color: #000;
+    margin: 10px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .collection-testimonial-{{ section.id }} .stars {
+    font-size: 20px;
+    margin-top: 15px;
+    color: gold;
+    position: relative;
+    z-index: 1;
+  }
+</style>
+
+<div class="collection-testimonial-{{ section.id }}">
+  <div class="container">
+    {% for block in section.blocks %}
+      {%- liquid
+        assign customer_image = block.settings.customer_image
+        assign customer_name = block.settings.customer_name
+        assign customer_review = block.settings.customer_review
+      -%}
+      
+      <div class="card">
+        <div class="img-box">
+          {% if customer_image != blank %}
+            <img src="{{ customer_image | image_url: width: 300 }}" alt="{{ customer_name }}">
+          {% endif %}
+        </div>
+        <h2>{{ customer_name }}</h2>
+        <p>{{ customer_review }}</p>
+        <div class="stars">★ ★ ★ ★ ★</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "testimonial YT live",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "customer_image",
+          "label": "Customer image"
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer name",
+          "default": "Koi kam ka nahi"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "customer_review",
+          "label": "Customer review text",
+          "default": "Bahut achchha hai!"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "testimonial YT live"
+    }
+  ]
+}
+{% endschema %}

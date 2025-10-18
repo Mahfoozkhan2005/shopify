@@ -1,0 +1,67 @@
+<style>
+  .collection-list-container-{{ section.id }} {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-content:center;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .collection-image-{{ section.id }} {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 3px solid #000;
+  }
+</style>
+<div style="text-align: center;">
+    {{ section.settings.collection-list-heading }}
+</div>
+<div class="collection-list-container-{{ section.id }}">
+  {% for block in section.blocks %}
+    <a class="collection-link-{{ section.id }}" href="{{ block.settings.collection_link }}">
+      <img class="collection-image-{{ section.id }}" src="{{ block.settings.collection_image | img_url: 'medium' }}" />
+    </a>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "collection list mz",
+  "settings": [
+    {
+        "type": "text",
+        "id": "collection-list-heading",
+        "label": "collection heading",
+        "default":"<h4>explore our best sellers</h4>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection-list",
+      "name": "Collection list",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Select image"
+        },
+        {
+          "type": "url",
+          "id": "collection_link",
+          "label": "Select collection link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "collection list mz"
+    }
+  ]
+}
+{% endschema %}

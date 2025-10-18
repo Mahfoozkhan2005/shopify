@@ -1,0 +1,65 @@
+{% liquid
+  assign star_ratings = section.settings.star_ratings
+  assign show_border = section.settings.show_border
+%}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .star-yellow {
+        color: #ffff00;
+    }
+
+    .star-gray {
+        color: #808080;
+    }
+    .content-border{
+    border: 2px solid #ffff00;
+    }
+    .no-content{
+    border: none;
+    }
+</style>
+
+<div class="container">
+    <div class="content {% if show_border %}content-border{% else %}no-border{% endif %}"></div>
+
+    <h3>{{ 'Hear from our happy customers' }}</h3>
+
+    <div class="star">
+        {% if star_ratings > 0 %}
+            {% for i in (1..5) %}
+                <i class="fa-solid fa-star {% if i <= star_ratings %}star-yellow{% else %}star-gray{% endif %}"></i>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "learning liquid",
+    "settings": [
+        {
+            "type": "range",
+            "id": "star_ratings",
+            "label": "Star Range",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "default": 3,
+            
+        },
+        {
+            "type": "checkbox",
+            "id": "show_border",
+            "label": "show border",
+            "default":false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Learning Liquid"
+        }
+    ]
+}
+{% endschema %}

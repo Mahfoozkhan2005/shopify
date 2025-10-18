@@ -1,0 +1,126 @@
+<!-- sections/faq-accordion.liquid -->
+<section id="faq-accordion" class="faq-section">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .faq-container {
+      background: #fff;
+      width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      margin: 0 auto;
+    }
+
+    .faq-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      cursor: pointer;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .faq-answer {
+      margin-top: 10px;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      font-size: 18px;
+      color: #f44336;
+    }
+
+    [x-show] {
+      transition: all 0.3s ease;
+    }
+
+    [x-show="false"] {
+      display: none !important;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+    }
+  </style>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <div class="faq-container" x-data="{ active: null }">
+    <h2 class="faq-title">{{ section.settings.faq_heading }}</h2>
+
+    {% for block in section.blocks %}
+      <div class="faq-item">
+        <div class="faq-question" @click="active === {{ forloop.index }} ? active = null : active = {{ forloop.index }}">
+          <span>{{ block.settings.question }}</span>
+          <span :class="{'rotate': active === {{ forloop.index }}}" class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer" x-show="active === {{ forloop.index }}">
+          {{ block.settings.answer }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Accordion (Alpine.js)",
+  "settings": [
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "FAQ Section Heading",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Accordion"
+    }
+  ]
+}
+{% endschema %}
